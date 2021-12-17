@@ -1,11 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import PageLoading from "../components/PageLoading";
 import Card from "../components/Card";
 import CardForm from "../components/CardForm";
+
 import logo from "../images/devconf.jpg";
 import api from "../api";
+
 import "./styles/CardNew.css";
-import { useNavigate } from "react-router-dom";
 
 export default function CardNew(props) {
   const [data, setData] = React.useState({
@@ -32,7 +35,7 @@ export default function CardNew(props) {
     try {
       await api.cards.create(data);
       setLoading(false);
-      nav("/cards");
+      nav("/CardManager/cards");
     } catch (error) {
       setLoading(false);
       setError(error);

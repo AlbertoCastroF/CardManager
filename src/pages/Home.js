@@ -1,6 +1,8 @@
-import logo from "../images/devconf.jpg";
-import card from "../images/homeimg.svg";
 import { Link } from "react-router-dom";
+
+import card from "../images/homeimg.svg";
+import logo from "../images/devconf.jpg";
+
 import "./styles/Home.css";
 
 export default function Home() {

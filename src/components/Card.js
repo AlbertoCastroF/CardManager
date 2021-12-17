@@ -1,5 +1,7 @@
-import confLogo from "../images/devconf.jpg";
 import Gravatar from "./Gravatar";
+
+import confLogo from "../images/devconf.jpg";
+
 import "./styles/Card.css";
 
 export default function Card(props) {

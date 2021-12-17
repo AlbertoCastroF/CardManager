@@ -1,7 +1,10 @@
-import Card from "../components/Card";
 import { Link } from "react-router-dom";
-import logo from "../images/devconf.jpg";
+
+import Card from "../components/Card";
 import DeleteCardModal from "../components/DeleteCardModal";
+
+import logo from "../images/devconf.jpg";
+
 import "./styles/CardDetails.css";
 
 export default function CardDetails(props) {

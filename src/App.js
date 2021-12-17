@@ -12,8 +12,8 @@ export default function App() {
     <>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="cards" element={<Cards />} />
+          <Route path="/CardManager" element={<Home />} />
+          <Route path="/CardManager/cards" element={<Cards />} />
           <Route path="cards/new" element={<CardNew />} />
           <Route path="cards/:cardId/edit" element={<CardEdit />} />
           <Route path="cards/:cardId" element={<CardDetailsContainer />} />

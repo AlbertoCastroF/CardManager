@@ -1,10 +1,13 @@
 import React from "react";
-import "./styles/Cards.css";
 import { Link } from "react-router-dom";
-import api from "../api";
+
 import CardsList from "../components/CardsList";
 import PageLoading from "../components/PageLoading";
 import PageError from "../components/PageError";
+
+import api from "../api";
+
+import "./styles/Cards.css";
 
 export default function Cards() {
   const [data, setData] = React.useState([]);

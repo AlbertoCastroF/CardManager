@@ -1,5 +1,6 @@
-import "./styles/PageLoading.css";
 import Loader from "./Loader";
+
+import "./styles/PageLoading.css";
 
 export default function PageLoading() {
   return (

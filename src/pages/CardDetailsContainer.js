@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 import PageError from "../components/PageError";
 import PageLoading from "../components/PageLoading";
 import CardDetails from "./CardDetails";
+
 import api from "../api";
 
 export default function CardDetailsContainer() {
@@ -36,7 +38,7 @@ export default function CardDetailsContainer() {
     try {
       await api.cards.remove(param.cardId);
       setLoading(false);
-      nav("/cards");
+      nav("/CardManager/cards");
     } catch (error) {
       setError(error);
       setLoading(false);

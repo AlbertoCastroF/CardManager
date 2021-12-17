@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./styles/CardsList.css";
+
 import Gravatar from "./Gravatar";
+
+import "./styles/CardsList.css";
 
 export default function CardsList(props) {
   const [query, setQuery] = React.useState("");
