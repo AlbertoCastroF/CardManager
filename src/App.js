@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Layout from "./components/Layout";
+import CardNew from "./pages/CardNew";
+import Cards from "./pages/Cards";
+import CardDetailsContainer from "./pages/CardDetailsContainer";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import { Routes, Route } from "react-router-dom";
+import CardEdit from "./pages/CardEdit";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="cards" element={<Cards />} />
+          <Route path="cards/new" element={<CardNew />} />
+          <Route path="cards/:cardId/edit" element={<CardEdit />} />
+          <Route path="cards/:cardId" element={<CardDetailsContainer />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </>
   );
 }
-
-export default App;

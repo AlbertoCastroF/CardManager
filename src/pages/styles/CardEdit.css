@@ -1,0 +1,27 @@
+.cardEdit {
+  margin-bottom: 1rem;
+}
+
+.cardEdit__hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  background: #1b1b25;
+  background-image: url("../../images/stars.svg");
+  background-repeat: repeat;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.cardEdit__hero img {
+  border-radius: 10px;
+}
+
+.container__compsEdit {
+  width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}

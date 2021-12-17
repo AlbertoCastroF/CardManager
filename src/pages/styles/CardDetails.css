@@ -1,0 +1,24 @@
+.cardDetails__hero {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 0;
+  background: #1b1b25;
+  background-image: url("../../images/stars.svg");
+  background-repeat: repeat;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.cardDetails__hero img {
+  border-radius: 10px;
+}
+
+.container {
+  margin-bottom: 1rem;
+}
+
+.container__compsDetails {
+  display: flex;
+  justify-content: space-evenly;
+}
