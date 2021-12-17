@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/CardManager/static/css/main.cdfe44ac.chunk.css",
+    "main.js": "/CardManager/static/js/main.bd84c1c2.chunk.js",
+    "main.js.map": "/CardManager/static/js/main.bd84c1c2.chunk.js.map",
+    "runtime-main.js": "/CardManager/static/js/runtime-main.cc6e7c59.js",
+    "runtime-main.js.map": "/CardManager/static/js/runtime-main.cc6e7c59.js.map",
+    "static/js/2.31e10018.chunk.js": "/CardManager/static/js/2.31e10018.chunk.js",
+    "static/js/2.31e10018.chunk.js.map": "/CardManager/static/js/2.31e10018.chunk.js.map",
+    "static/js/3.02f72a5d.chunk.js": "/CardManager/static/js/3.02f72a5d.chunk.js",
+    "static/js/3.02f72a5d.chunk.js.map": "/CardManager/static/js/3.02f72a5d.chunk.js.map",
+    "index.html": "/CardManager/index.html",
+    "static/css/main.cdfe44ac.chunk.css.map": "/CardManager/static/css/main.cdfe44ac.chunk.css.map",
+    "static/js/2.31e10018.chunk.js.LICENSE.txt": "/CardManager/static/js/2.31e10018.chunk.js.LICENSE.txt",
+    "static/media/homeimg.abb978d5.svg": "/CardManager/static/media/homeimg.abb978d5.svg",
+    "static/media/notfound.3f1be8b0.svg": "/CardManager/static/media/notfound.3f1be8b0.svg",
+    "static/media/CardEdit.css": "/CardManager/static/media/stars.d4d2376b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc6e7c59.js",
+    "static/js/2.31e10018.chunk.js",
+    "static/css/main.cdfe44ac.chunk.css",
+    "static/js/main.bd84c1c2.chunk.js"
+  ]
+}
