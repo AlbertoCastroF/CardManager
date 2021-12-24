@@ -9,8 +9,8 @@ Users should be able to:
 
 ### Screenshot
 
-![List of Cards](./images/cards.jpg)
-![New card preview](./images/cardCreate.jpg)
+![List of Cards](./src/images/devconf.jpg)
+![New card preview](./src/images/stars.svg)
 
 ### Links
 
