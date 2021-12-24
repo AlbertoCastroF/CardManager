@@ -11,7 +11,7 @@ export default function Home() {
       <div className="homebody__welcome">
         <img className="homebody__welcome-img" src={logo} alt="logo" />
         <h1 className="homebody__welcome-title">Create Your Cards</h1>
-        <h2>The easiest way to manage your conference</h2>
+        <h2>The easiest way to manage your conferenceeeeee</h2>
         <Link className="btn btn-primary" to="cards">
           Start
         </Link>
