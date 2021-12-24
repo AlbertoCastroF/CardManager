@@ -1,6 +1,6 @@
 .homebody {
   width: 100%;
-  height: 70.4vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -17,6 +17,7 @@
   align-items: flex-start;
   justify-content: center;
   margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .homebody__welcome-img {
@@ -35,4 +36,14 @@
 
 h2 {
   margin-top: 0;
+}
+
+.homebody__welcome {
+  margin-left: 2rem;
+}
+
+@media (max-width: 700px) {
+  .homebody__img {
+    display: none;
+  }
 }

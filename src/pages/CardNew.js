@@ -6,11 +6,11 @@ import Card from "../components/Card";
 import CardForm from "../components/CardForm";
 
 import logo from "../images/devconf.jpg";
-import api from "../api";
 
 import "./styles/CardNew.css";
 
-export default function CardNew(props) {
+export default function CardNew() {
+  // DATA WILL CONTAIN ALL OF THE FORM INFORMATION THEN SEND IT TO THE API
   const [data, setData] = React.useState({
     firstName: "",
     lastName: "",
@@ -24,6 +24,7 @@ export default function CardNew(props) {
   const nav = useNavigate();
 
   function handleChange(e) {
+    // HERE I SET THE DATA ACCORDING TO THE NAME AND VALUE FROM EACH IMPUT
     const { name, value } = e.target;
     setData((prev) => ({ ...prev, [name]: value }));
   }
@@ -33,8 +34,16 @@ export default function CardNew(props) {
     setLoading(true);
     setError(null);
     try {
-      await api.cards.create(data);
+      // POSTING NEW CARD
+      await fetch("https://61be39382a1dd4001708a291.mockapi.io/data/cards", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
       setLoading(false);
+      // ONCE YOU POST A CARD YOU WILL BE REDIRECTED TO THE CARDS COMPONENT
       nav("/CardManager/cards");
     } catch (error) {
       setLoading(false);
@@ -44,6 +53,7 @@ export default function CardNew(props) {
 
   return (
     <div className="cardNew">
+      {/*WHILE LOAD IS TRUE I SHOW THE PAGELOADING COMPONENT */}
       {loading ? (
         <PageLoading />
       ) : (
@@ -54,17 +64,18 @@ export default function CardNew(props) {
           <div className="container">
             <div className="container__compsNew">
               <div>
+                {/* CARD SHOWS THE UPDATED INFORMATION IN REAL TIME AS IT IS SUBMITTED IN THE FORM BELOS */}
                 <Card
                   firstName={data.firstName || "FIRST_NAME"}
                   lastName={data.lastName || "LAST_NAME"}
                   twitter={data.twitter || "twitter"}
                   jobTitle={data.jobTitle || "JOB_TITLE"}
                   email={data.email || "EMAIL"}
-                  // avatarURL="https://gravatar.com/avatar?d=identicon"
                 />
               </div>
               <div>
                 <h1>New Attendant</h1>
+                {/* CARDFORM UPDATES THE DATA FROM THE INFORMATION ENTERED IN THE INPUT ELEMENTS */}
                 <CardForm
                   onChange={handleChange}
                   onSubmit={handleSubmit}

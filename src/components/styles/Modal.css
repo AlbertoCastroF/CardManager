@@ -28,3 +28,9 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .modal__container {
+    width: 300px;
+  }
+}

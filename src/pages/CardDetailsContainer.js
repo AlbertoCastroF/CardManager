@@ -5,39 +5,47 @@ import PageError from "../components/PageError";
 import PageLoading from "../components/PageLoading";
 import CardDetails from "./CardDetails";
 
-import api from "../api";
-
 export default function CardDetailsContainer() {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
+  // FROM THIS COMPONENT I WILL SEND MODALISOPEN STATE TO THE DELETECARDMODAL COMPONENT
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const param = useParams();
   const nav = useNavigate();
 
+  // fetchData();
   React.useEffect(() => {
-    fetchData();
-  }, []);
-
-  async function fetchData() {
-    setLoading(true);
-    setError(null);
-    try {
-      const data = await api.cards.read(param.cardId);
-      setLoading(false);
-      setData(data);
-    } catch (error) {
-      setError(error);
-      setLoading(false);
-    }
-  }
+    (async function fetchData() {
+      setLoading(true);
+      setError(null);
+      try {
+        // TO SEE THE DETAILS OF A CARD I MAKE AN API CALL TO BRING ONLY THE CARDS INFORMATION I NEED WITH THE HELP OF USEPARAMS
+        const res = await fetch(
+          `https://61be39382a1dd4001708a291.mockapi.io/data/cards/${param.cardId}`
+        );
+        const data = await res.json();
+        setLoading(false);
+        setData(data);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    })();
+  }, [param.cardId]);
 
   async function handleDeleteCard() {
     setLoading(true);
     setError(null);
     try {
-      await api.cards.remove(param.cardId);
+      await fetch(
+        `https://61be39382a1dd4001708a291.mockapi.io/data/cards/${param.cardId}`,
+        {
+          method: "DELETE",
+        }
+      );
       setLoading(false);
+      // IF USER PRESSES THE DELETE BUTTON CARD IS DELETED AND WE ARE REDIRECTED TO /CARDMANAGER/CARDS
       nav("/CardManager/cards");
     } catch (error) {
       setError(error);
@@ -54,6 +62,7 @@ export default function CardDetailsContainer() {
 
   return (
     <>
+      {/* IF THERE NO ERROR AND LOADING IS FALSE I SHOW CARDDETAILS */}
       {error ? (
         <PageError error={error} />
       ) : loading ? (

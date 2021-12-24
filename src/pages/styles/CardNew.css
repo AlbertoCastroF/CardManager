@@ -23,8 +23,19 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-.container__compsNew .card {
-  margin-right: 2rem;
+@media (max-width: 1000px) {
+  .container__compsNew {
+    width: 500px;
+    grid-template-columns: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container__compsNew {
+    width: 300px;
+    grid-template-columns: 300px;
+  }
 }

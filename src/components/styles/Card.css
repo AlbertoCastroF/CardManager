@@ -1,5 +1,5 @@
 .card {
-  min-width: 400px;
+  min-width: 300px;
   background: #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -53,4 +53,10 @@
   color: darkred;
   font-weight: bold;
   font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .card__section-name {
+    font-size: 0.9rem;
+  }
 }

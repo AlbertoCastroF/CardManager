@@ -5,12 +5,12 @@ import PageLoading from "../components/PageLoading";
 import Card from "../components/Card";
 import CardForm from "../components/CardForm";
 
-import api from "../api";
 import logo from "../images/devconf.jpg";
 
 import "./styles/CardEdit.css";
 
 export default function CardEdit(props) {
+  // DATA THAT WILL BE SEND TO THE MOCKAPI API TO UPDATE A CARDS INFORMATION
   const [data, setData] = React.useState({
     firstName: "",
     lastName: "",
@@ -25,22 +25,25 @@ export default function CardEdit(props) {
   const param = useParams();
 
   React.useEffect(() => {
-    fetchData();
-  }, []);
+    (async function fetchData() {
+      setLoading(true);
+      setError(null);
+      try {
+        // GETTING THE INFO OF CURRENT CARD
+        const res = await fetch(
+          `https://61be39382a1dd4001708a291.mockapi.io/data/cards/${param.cardId}`
+        );
+        const data = await res.json();
+        setLoading(false);
+        setData(data);
+      } catch (error) {
+        setLoading(false);
+        setError(error);
+      }
+    })();
+  }, [param.cardId]);
 
-  async function fetchData() {
-    setLoading(true);
-    setError(null);
-    try {
-      const data = await api.cards.read(param.cardId);
-      setLoading(false);
-      setData(data);
-    } catch (error) {
-      setLoading(false);
-      setError(error);
-    }
-  }
-
+  // FUNCTION THAT WILL UPDATE THE DATA FROM THE FORM
   function handleChange(e) {
     const { name, value } = e.target;
     setData((prev) => ({ ...prev, [name]: value }));
@@ -51,7 +54,17 @@ export default function CardEdit(props) {
     setLoading(true);
     setError(null);
     try {
-      await api.cards.update(param.cardId, data);
+      // UPDATING THE CURRENT CARD WITH NEW DATA
+      await fetch(
+        `https://61be39382a1dd4001708a291.mockapi.io/data/cards/${param.cardId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       setLoading(false);
       nav("/CardManager/cards");
     } catch (error) {
@@ -62,6 +75,7 @@ export default function CardEdit(props) {
 
   return (
     <div className="cardEdit">
+      {/* BODY OF THE COMPONENT WILL SHOW UNTIL LOADING IS FALSE */}
       {loading ? (
         <PageLoading />
       ) : (

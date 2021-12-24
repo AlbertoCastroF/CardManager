@@ -6,6 +6,7 @@ import notfound from "../images/notfound.svg";
 import "./styles/NotFound.css";
 
 export default function NotFound() {
+  // THIS COMPONENT SHOWN WHEN THERE IS NOT A ROUTE SPECIFIED IN THE APP
   return (
     <div className="notfoundbody">
       <div className="notfoundbody__welcome">
