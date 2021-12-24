@@ -6,6 +6,7 @@ import logo from "../images/devconf.jpg";
 import "./styles/Home.css";
 
 export default function Home() {
+  // HOME PAGE OF MY APP
   return (
     <div className="homebody">
       <div className="homebody__welcome">

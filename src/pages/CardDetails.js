@@ -12,6 +12,7 @@ export default function CardDetails(props) {
   const param = props.param;
   return (
     <>
+      {/* HERO RENDERING */}
       <div className="cardDetails__hero">
         <img src={logo} alt="logo" />
         <div className="cardDetails__hero-name">
@@ -24,6 +25,7 @@ export default function CardDetails(props) {
       <div className="container">
         <div className="container__compsDetails">
           <div>
+            {/* CARD DATA IS RENDERED HERE FROM PROPS.DATA */}
             <Card
               firstName={data.firstName || "FIRST_NAME"}
               lastName={data.lastName || "LAST_NAME"}
@@ -35,6 +37,7 @@ export default function CardDetails(props) {
           <div>
             <h2>What do you want to do?</h2>
             <div>
+              {/* THIS BUTTON SEND YOU TO /CARDS/ID/EDIT TO EDIT THE CARD DATA */}
               <Link
                 className="btn btn-primary"
                 to={`/cards/${param.cardId}/edit`}
@@ -43,9 +46,11 @@ export default function CardDetails(props) {
               </Link>
             </div>
             <div>
+              {/* THIS BUTTON OPEND A MODAL THAT ALLOW YOU TO DELETE THE CARD ENTIRELY */}
               <button onClick={props.onOpenModal} className="btn btn-danger">
                 Delete
               </button>
+              {/* MODAL TO DELETE CARD */}
               <DeleteCardModal
                 onClose={props.onCloseModal}
                 isOpen={props.modalIsOpen}

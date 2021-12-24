@@ -22,3 +22,33 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+/* @media (max-width: 1000px) {
+  .container__compsDetails {
+    width: 500px;
+    grid-template-columns: 500px;
+  }
+} */
+
+@media (max-width: 600px) {
+  .container__compsDetails {
+    width: 300px;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .cardDetails__hero {
+    padding: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardDetails__hero img {
+    width: 100px;
+  }
+
+  .cardDetails__hero h1 {
+    margin: 0;
+  }
+}

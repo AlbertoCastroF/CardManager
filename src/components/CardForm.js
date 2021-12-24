@@ -3,8 +3,7 @@ import React from "react";
 import "./styles/CardForm.css";
 
 export default function CardForm(props) {
-  function handleClick(e) {}
-
+  // THIS COMPONENT WILL RENDER FOR CARDEDIT AND CARDNEW ONLY
   return (
     <div>
       <form onSubmit={props.onSubmit}>
@@ -50,9 +49,7 @@ export default function CardForm(props) {
             name="twitter"
           />
         </div>
-        <button onClick={handleClick} className="btn btn-primary">
-          Save
-        </button>
+        <button className="btn btn-primary">Save</button>
         {props.error && <p className="text-danger">{props.error.message}</p>}
       </form>
     </div>

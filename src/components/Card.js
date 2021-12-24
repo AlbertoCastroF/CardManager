@@ -4,6 +4,7 @@ import confLogo from "../images/devconf.jpg";
 
 import "./styles/Card.css";
 
+// THIS COMPONENT WILL RENDER FOR CARDEDIT, CARDNEW AND CARDDETAILS ONLY
 export default function Card(props) {
   return (
     <div className="card">

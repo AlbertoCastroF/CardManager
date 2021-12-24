@@ -1,3 +1,7 @@
+.cards {
+  padding: 1rem;
+}
+
 .cards__hero {
   width: 100%;
   padding: 2rem 0;
@@ -28,4 +32,12 @@
   display: flex;
   justify-content: flex-end;
   margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 600px) {
+  .cards__container {
+    display: flex;
+    justify-content: center;
+  }
 }
