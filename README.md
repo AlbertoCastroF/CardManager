@@ -77,3 +77,5 @@ I'll continue expanding my React knowledge to create more complex Apps.
 ## Acknowledgments
 
 Thanks to the scrimba's and Danny Thompson's discord communities who helped me in some of the troubles i had while creating this project 😁.
+Scrimba discord [HERE](https://discord.com/login?redirect_to=%2Fchannels%2F684009642984341525%2F688827098957348907)
+Danny's discord [HERE](https://discord.gg/XhxVQUuA)
